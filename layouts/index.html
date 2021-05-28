@@ -5,6 +5,7 @@
 		{{ with .Content }}{{.}}{{ end }}
 	</header>
 	{{ $latestcount := .Site.Params.LatestCount | default 3 }}
+	{{ if 0 }} <!-- Disable showing the latest posts on the homepage -->
 	<section>
 		<h4>{{ T "latestPost" }}</h4>
 		<ul class="no-bullet">
@@ -14,6 +15,7 @@
 			{{- end -}}
 		</ul>
 	</section>
+	{{ end }}
 
 	{{ $pages := where site.RegularPages "Type" "in" .Site.Params.WorkSections }}
 	{{ if ne (len $pages) 0 }}
