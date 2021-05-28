@@ -6,11 +6,13 @@
 				<p>
                                     {{ with .Site.Copyright }} {{ . | safeHTML }} {{ end }} {{ if .Site.Params.themeAttrib | default true }} ~ theme <a href="https://github.com/yursan9/manis-hugo-theme">manis</a><br> {{ end }} {{ with .Site.Params.LicenseURL }} | ~ <a href="{{.}}">{{ T "license" }}</a> {{ end }}
 				</p>
+				{{ if 0 }}  <!-- Remove "Back to Up" button -->
 				{{ if ne .Kind "home" }}
 				<a href="#brand">
 					<img class="icon-text" src="/img/toup.svg" alt="To Up"/>
 					<span>{{ T "toUp" }}</span>
 				</a>
+				{{ end }}
 				{{ end }}
 			</div>
 		</footer>
