@@ -4,6 +4,7 @@
 	{{ if .Params.toc }} <h2> Table of Contents </h2> {{ .TableOfContents }} {{ end }}
 	{{ .Content }}
 </article>
+{{ if 0 }}  <!-- Disable the navigation of the prev and/or next posts in the bottom of the page -->
 <nav class="no-print post-nav">
 {{ if .PrevInSection }}
 	<a class="prev-post" href="{{ .PrevInSection.Permalink }}">
@@ -18,6 +19,7 @@
 	</a>
 {{ end }}
 </nav>
+{{ end }}
 {{ partial "related" . }}
 {{ if in .Site.Params.UtterancesSections .Section}}
 	{{ partial "utterances" .}}
